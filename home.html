@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Issues Tracker</title>
+    <link rel="shortcut icon" href="assets/github-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+<style>
+    *{
+
+font-family: "Geist", sans-serif;
+
+}
+</style>
+</head>
+<body  >
+    <header>
+        <div class="navbar bg-base-100 shadow-sm">
+  <div class="flex-1">
+    
+    <a class="btn btn-ghost text-xl">
+        <img class="w-8" src="assets/github-logo.png" alt="">
+        GitHub Issues Tracker</a>
+  </div>
+  <div class="flex gap-2">
+   <label class="input w-50">
+  <button id="btn-search" class="btn "><svg  class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g
+      stroke-linejoin="round"
+      stroke-linecap="round"
+      stroke-width="2.5"
+      fill="none"
+      stroke="currentColor"
+    >
+      <circle cx="11" cy="11" r="8"></circle>
+      <path d="m21 21-4.3-4.3"></path>
+    </g>
+  </svg></button>
+  <input id="input-search" type="text"  placeholder="Search Issues" />
+</label>
+    <div class="dropdown dropdown-end">
+      <div  role="button" class="btn btn-primary">
+      
+          <p>+NEW ISSUE</p>
+        
+      </div>
+     
+    </div>
+  </div>
+</div>
+    </header>
+
+    <section class="w-[1110px] h-[88px]  mx-auto p-4 bg-white rounded-xl shadow-sm" >
+        <div class="sm:grid grid-cols-1 md: grid-cols-3 justify-between items-center mb-8 gap-4">
+            <div class=" flex gap-2">
+                <button id="tab-all" onclick="switchtab('all')" class="btn btn-sm btn-ghost border  border-slate-200 w-[120px] h-[40px] text-slate-600 px-6 rounded-md normal-case bg-primary border-navy text-white">All</button>
+                <button id="tab-interview" onclick="switchtab('interview')" class="btn btn-sm btn-ghost border border-slate-200 text-slate-600 w-[120px] h-[40px] px-6 rounded-md normal-case bg-transparent text-slate-700 border-state-200 text-slate">Open</button>
+                <button id="tab-rejected" onclick="switchtab('rejected')" class="btn btn-sm btn-ghost border border-slate-200 text-slate-600 w-[120px] h-[40px] px-6 rounded-md normal-case bg-transparent text-slate-700 border-state-200 text-slate">Closed</button>
+            </div>
+            
+            
+        </div>
+
+        </section>
+       <section class="py-10">
+    <div class="w-[1110px] h-[88px] mx-auto flex justify-between bg-white rounded-xl shadow-sm p-5 border border-gray-100">
+        
+        <div class="flex items-center  gap-4 h-full">
+            
+            <div class="bg-indigo-100 rounded-full w-12 h-12 flex items-center justify-center shrink-0">
+                <img src="assets/Aperture.png" alt="Aperture Icon" class="w-6 h-6 text-indigo-600">
+            </div>
+            
+            <div>
+                <h2 class="text-lg font-bold text-slate-800 leading-tight">50 Issues</h2>
+                <p class="text-sm text-slate-500">Track and manage your project issues</p>
+            </div>
+
+        </div>
+        <div class="flex gap-2 p-2">
+            <img src="assets/Open-Status.png" alt="" class="w-6 h-6">
+            <p>open</p>
+            <img src="assets/Closed- Status .png" alt="" class="w-6 h-6">
+            <p>closed</p>
+        </div>
+        
+    </div> 
+
+    <div id="issue-box" class="w-[1110px] h-[1376px] mx-auto grid grid-cols-1 lg:grid-cols-3bg-slate-50 rounded-xl shadow-sm">
+         <dialog id="issue_modal" class="modal">
+        <div class="modal-box w-11/12 max-w-2xl">
+            <div id="modal-content"></div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    </div>
+
+
+
+
+
+</section>
+
+<script src="script/open.js"></script>
+
+<script src="script/issue.js"></script>
+</body>
+</html>
